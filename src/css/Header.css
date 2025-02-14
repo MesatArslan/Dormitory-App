@@ -1,0 +1,111 @@
+/* General Header Styles */
+.header {
+    background-color: #2c3e50; /* Dark gray-blue for a modern and clean look */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Logo Styles */
+  .header .logo {
+    flex-grow: 1;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Desktop Navigation Links */
+  .header .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .header .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  
+  .header .nav-link:hover {
+    color: #ecf0f1; /* Lighter grayish color on hover for a clean, minimal effect */
+  }
+  
+  /* Join Us Button Styles */
+  .header .join-us-btn {
+    background-color: #3498db; /* Light blue for a clean and professional look */
+    color: white;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    text-transform: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .header .join-us-btn:hover {
+    background-color: #2980b9; /* Slightly darker blue on hover */
+  }
+  
+  /* Mobile Menu Styles */
+  .mobile-menu {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    /* Hide desktop links on mobile */
+    .header .nav-links {
+      display: none;
+    }
+  
+    /* Display mobile menu icon */
+    .mobile-menu {
+      display: block;
+    }
+  
+    /* Mobile Drawer Styles */
+    .mobile-drawer {
+      position: fixed; /* Keeps the drawer fixed under the header */
+      top: 64px; /* Adjust based on your header height */
+      width: 100%;
+      z-index: 999; /* Make sure it is above other content */
+      background-color: #34495e; /* Slightly darker gray-blue */
+      transition: transform 0.3s ease-out;
+    }
+  
+    .drawer-box {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      color: #ffffff;
+    }
+  
+    /* Drawer List Item Styles */
+    .drawer-box .MuiListItemText-root {
+      font-size: 16px;
+      font-weight: 400;
+      color: white;
+      padding: 0.8rem;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      transition: background-color 0.3s ease;
+    }
+  
+    .drawer-box .MuiListItemText-root:hover {
+      background-color: #2980b9; /* Light blue hover effect */
+    }
+  
+    /* Apply shadow to Drawer */
+    .MuiDrawer-paper {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 0;
+    }
+  }
+  

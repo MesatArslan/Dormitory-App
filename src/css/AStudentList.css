@@ -1,0 +1,110 @@
+.student-list-container {
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.student-list-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.student-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Light shadow for table */
+}
+
+.student-list-table th, .student-list-table td {
+  padding: 15px;
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
+  border-bottom: 1px solid #e0e0e0; /* Light border for rows */
+}
+
+.student-list-table th {
+  background-color: #3b82f6; /* Primary blue color for the header */
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.student-list-table tbody tr {
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.student-list-table tbody tr:hover {
+  background-color: #f9fafb; /* Light grey hover background */
+}
+
+.student-list-table td {
+  color: #333;
+}
+
+.student-list-table tbody tr:nth-child(even) {
+  background-color: #f5f5f5; /* Slightly alternating background color for rows */
+}
+
+button {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #2563eb; /* Slightly darker blue on hover */
+  color: #fff;
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+button:active {
+  transform: translateY(0); /* Return to original position on click */
+}
+
+button.edit-btn {
+  background-color: #22c55e; /* Green for Edit */
+  color: white;
+  margin-right: 10px;
+}
+
+button.delete-btn {
+  background-color: #ef4444; /* Red for Delete */
+  color: white;
+}
+
+.error-message {
+  color: #ff4d4d;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-field input {
+  flex: 1;
+  padding-right: 30px; /* Add space for the eye icon */
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,125 @@
+/* Container for the permission form */
+.student-permission-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Form groups for individual input fields */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Styling for labels */
+label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Styling for input fields */
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #f7f7f7;
+  transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus {
+  border: 1px solid #007bff;
+  outline: none;
+}
+
+/* Submit button styles */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.submit-btn:active {
+  transform: translateY(2px);
+}
+
+/* Permission status section */
+.permission-status {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #e9f5ff;
+  border-left: 5px solid #007bff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.permission-status h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.permission-status p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+/* Submitted request section */
+.submitted-request {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-left: 5px solid #28a745;
+  border-radius: 8px;
+}
+
+.submitted-request h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.submitted-request p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .student-permission-container {
+    padding: 20px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+  }
+}
