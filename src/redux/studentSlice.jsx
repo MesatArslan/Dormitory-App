@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  student: '', // Student's name or info
+  student: '', // Student's full name (name + surname)
   isStudentLoggedIn: false, // Track student's login state
 };
 
@@ -10,12 +10,13 @@ export const studentSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action) => {
-      // Action payload will have the student name
-      state.student = action.payload;
+      // Combine name and surname into one string
+      const { name, surname } = action.payload;
+      state.student = `${name} ${surname}`; // Store full name in the student field
       state.isStudentLoggedIn = true; // Set logged-in status to true
     },
     logout: (state) => {
-      state.student = ''; // Clear the student data
+      state.student = ''; // Clear the student's full name
       state.isStudentLoggedIn = false; // Reset logged-in status
     },
   },

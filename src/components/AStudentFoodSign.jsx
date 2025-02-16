@@ -9,7 +9,7 @@ const AStudentFoodSign = () => {
   useEffect(() => {
     // Fetch food list and student choices from localStorage
     const storedFoodList = JSON.parse(localStorage.getItem('foodList')) || [];
-    const storedStudentChoices = JSON.parse(localStorage.getItem('studentChoices')) || [];
+    const storedStudentChoices = JSON.parse(localStorage.getItem('studentFoodChoices')) || [];
 
     // Set the fetched data into state
     setFoodList(storedFoodList);
@@ -18,7 +18,14 @@ const AStudentFoodSign = () => {
 
   // Function to count how many students signed up for "yes" for breakfast or dinner for a specific day
   const countMealSignups = (dayIndex, mealType) => {
-    return studentChoices.filter((choice) => choice[dayIndex]?.[mealType] === 'yes').length;
+    // Filter student choices and count those with 'yes' for the specified meal
+    return studentChoices.reduce((count, choice) => {
+      const studentChoiceForDay = choice.choices[dayIndex];
+      if (studentChoiceForDay && studentChoiceForDay[mealType] === 'yes') {
+        count++;
+      }
+      return count;
+    }, 0);
   };
 
   return (
@@ -31,9 +38,8 @@ const AStudentFoodSign = () => {
           <p>No food data available.</p>
         ) : (
           foodList.map((meal, index) => (
-            // Added key here using `meal.day`
-            <div key={meal.day} className="day-summary">
-              <h4>{meal.day}</h4>
+            <div key={meal.date} className="day-summary">
+              <h4>{meal.date}</h4>
               <div className="meal-summary">
                 <div>
                   <h5>Breakfast: {meal.breakfast}</h5>

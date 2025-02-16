@@ -13,7 +13,14 @@ const AStudentPermission = () => {
 
   // Save data to localStorage whenever students state changes
   useEffect(() => {
-    localStorage.setItem('studentPermissions', JSON.stringify(students)); // Save data
+    // Automatically delete oldest permissions if count exceeds 100
+    if (students.length > 3) {
+      const trimmedStudents = students.slice(-3); // Keep only the last 100 permissions
+      setStudents(trimmedStudents); // Update the state
+      localStorage.setItem('studentPermissions', JSON.stringify(trimmedStudents)); // Save trimmed data
+    } else {
+      localStorage.setItem('studentPermissions', JSON.stringify(students)); // Save data if within limit
+    }
   }, [students]);
 
   // Function to handle approval
@@ -55,41 +62,44 @@ const AStudentPermission = () => {
             </tr>
           </thead>
           <tbody>
-            {/* Loop through the students data */}
-            {students.map((student) => (
-              <tr key={student.id}>
-                <td>{student.studentName}</td> {/* Updated field */}
-                <td>{student.leaveDate}</td> {/* Updated field */}
-                <td>{student.returnDate}</td> {/* Updated field */}
-                <td>{student.contactNumber}</td> {/* Updated field */}
-                <td>{student.destination}</td> {/* Updated field */}
-                <td>
-                  {/* Status Display */}
-                  {student.status === 'pending' && <span>Pending</span>}
-                  {student.status === 'approved' && <span className="approved">Approved</span>}
-                  {student.status === 'rejected' && <span className="rejected">Rejected</span>}
-                </td>
-                <td>
-                  {/* Action Buttons */}
-                  {student.status === 'pending' && (
-                    <>
-                      <button
-                        onClick={() => handleApprove(student.id)}
-                        className="approve-btn"
-                      >
-                        Approve
-                      </button>
-                      <button
-                        onClick={() => handleReject(student.id)}
-                        className="reject-btn"
-                      >
-                        Reject
-                      </button>
-                    </>
-                  )}
-                </td>
-              </tr>
-            ))}
+            {/* Reverse the students array to show the latest permissions first */}
+            {students
+              .slice() // Create a copy to avoid mutating the original array
+              .reverse() // Reverse the order to show latest permissions at the top
+              .map((student) => (
+                <tr key={student.id}>
+                  <td>{student.studentName}</td>
+                  <td>{student.leaveDate}</td>
+                  <td>{student.returnDate}</td>
+                  <td>{student.contactNumber}</td>
+                  <td>{student.destination}</td>
+                  <td>
+                    {/* Status Display */}
+                    {student.status === 'pending' && <span>Pending</span>}
+                    {student.status === 'approved' && <span className="approved">Approved</span>}
+                    {student.status === 'rejected' && <span className="rejected">Rejected</span>}
+                  </td>
+                  <td>
+                    {/* Action Buttons */}
+                    {student.status === 'pending' && (
+                      <>
+                        <button
+                          onClick={() => handleApprove(student.id)}
+                          className="approve-btn"
+                        >
+                          Approve
+                        </button>
+                        <button
+                          onClick={() => handleReject(student.id)}
+                          className="reject-btn"
+                        >
+                          Reject
+                        </button>
+                      </>
+                    )}
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       )}

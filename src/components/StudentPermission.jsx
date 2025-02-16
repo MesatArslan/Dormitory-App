@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux'; // Importing the useSelector hook
 import '../css/StudentPermissionn.css';
 
 const initialStatus = "Pending"; // Default status is Pending
 
 const StudentPermission = () => {
+  // Get student's full name from Redux store (but we won't display it)
+  const studentName = useSelector((state) => state.studentS.student);
+
   const [leaveDate, setLeaveDate] = useState('');
   const [returnDate, setReturnDate] = useState('');
   const [destination, setDestination] = useState('');
@@ -14,10 +18,17 @@ const StudentPermission = () => {
   // Check if there's a previously submitted request in localStorage
   useEffect(() => {
     const storedPermissions = JSON.parse(localStorage.getItem('studentPermissions')) || [];
-    if (storedPermissions.length > 0) {
-      setSubmittedRequest(storedPermissions[storedPermissions.length - 1]); // Set the last submitted request
+
+    // Find the last request submitted by this student
+    const lastRequest = storedPermissions.find(
+      (request) => request.studentName === studentName
+    );
+
+    if (lastRequest) {
+      setSubmittedRequest(lastRequest); // Set the last submitted request
+      setPermissionStatus(lastRequest.status); // Set the status of the last request
     }
-  }, []);
+  }, [studentName]);
 
   // Handle form submission
   const handleSubmit = (e) => {
@@ -25,6 +36,7 @@ const StudentPermission = () => {
 
     const newRequest = {
       id: Date.now(), // Unique ID based on timestamp
+      studentName,    // Use full student name from Redux
       leaveDate,
       returnDate,
       destination,
@@ -43,13 +55,13 @@ const StudentPermission = () => {
 
     // Set the submittedRequest state to show confirmation
     setSubmittedRequest(newRequest);
+    setPermissionStatus("pending"); // Set status to pending for the new request
 
-    // Simulate resetting the form
+    // Reset the form fields
     setLeaveDate('');
     setReturnDate('');
     setDestination('');
     setContactNumber('');
-    setPermissionStatus("Pending");
 
     // Optionally show a success alert
     alert('Permission request submitted!');
@@ -102,22 +114,18 @@ const StudentPermission = () => {
         <button type="submit" className="submit-btn">Submit Request</button>
       </form>
 
-      {/* Display the current status of the permission */}
-      <div className="permission-status">
-        <h3>Your Permission Request Status</h3>
-        <p>Status: <strong>{permissionStatus}</strong></p>
-      </div>
-
-      {/* Display the submitted request if it exists */}
+      {/* Display the submitted request and status if it exists */}
       {submittedRequest && (
-        <div className="submitted-request">
+        <div className="submitted-request-status">
           <h3>Your Last Permission Request</h3>
           <p><strong>Leave Date:</strong> {submittedRequest.leaveDate}</p>
           <p><strong>Return Date:</strong> {submittedRequest.returnDate}</p>
           <p><strong>Destination:</strong> {submittedRequest.destination}</p>
           <p><strong>Contact Number:</strong> {submittedRequest.contactNumber}</p>
+          <p><strong>Status:</strong> {permissionStatus}</p> {/* Status is shown here */}
         </div>
       )}
+
     </div>
   );
 };

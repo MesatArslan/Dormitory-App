@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../css/FoodList.css';  // Import the CSS for styling
+import '../css/AFoodList.css';  // Import the CSS for styling
 
 const AFoodList = () => {
   const [foodData, setFoodData] = useState([]);
@@ -99,6 +99,15 @@ const AFoodList = () => {
     const newDate = new Date(selectedDate);
     newDate.setDate(newDate.getDate() + days);
     setSelectedDate(newDate.toISOString().split('T')[0]);
+  };
+
+  // Function to clear all food data
+  const handleClearFoodList = () => {
+    if (window.confirm("Are you sure you want to clear the entire food list?")) {
+      localStorage.removeItem('foodList');  // Clear food data from localStorage
+      setFoodData([]);  // Clear the food data state
+      alert('Food list has been cleared!');
+    }
   };
 
   return (
@@ -204,6 +213,7 @@ const AFoodList = () => {
       </div>
 
       <button className="btn-save" onClick={handleSave}>Save All Meals</button>
+      <button className="btn-clear" onClick={handleClearFoodList}>Clear Food List</button> {/* Clear button */}
     </div>
   );
 };

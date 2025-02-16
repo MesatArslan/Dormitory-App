@@ -108,4 +108,29 @@
       font-size: 14px;
     }
   }
+  /* Style for the Clear Food List Button */
+.btn-clear {
+  background-color: #ff4d4d; /* Red color to signify delete action */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-clear:hover {
+  background-color: #ff1a1a; /* Darker red on hover */
+}
+
+.btn-clear:active {
+  background-color: #e60000; /* Darker red when clicked */
+}
+
+.btn-clear:focus {
+  outline: none; /* Remove default outline */
+}
+
   

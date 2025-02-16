@@ -20,29 +20,33 @@ const StudentLogin = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     // Retrieve student data from local storage
     const students = JSON.parse(localStorage.getItem('students')) || [];
-
+  
     // Check if student exists
     const student = students.find(student => student.email === username && student.password === password);
-
+  
     if (student) {
-      dispatch(login(student.name)); // Dispatch login action to Redux
+      // Dispatch login action to Redux with separate name and surname
+      dispatch(login({ name: student.name, surname: student.surname }));
       setLoginError('');
       navigate('/student-dashboard'); // Redirect to Student Dashboard on successful login
     } else {
       setLoginError('Invalid username or password.');
     }
   };
+  
 
   // Handle logout
   const handleLogout = () => {
     dispatch(logout()); // Dispatch logout action to Redux
     setUsername(''); // Clear input fields
     setPassword('');
+    navigate('/'); // Redirect to login after logout
   };
 
+  // If student is not logged in, show login form
   if (!isStudentLoggedIn) {
     return (
       <form className="login-form" onSubmit={handleSubmit}>
@@ -70,10 +74,11 @@ const StudentLogin = () => {
     );
   }
 
+  // If student is logged in, show the dashboard
   return (
-    <>
-      <StudentDashboard studentName={studentName} />
-    </>
+    <div>
+      <StudentDashboard studentName={studentName} handleLogout={handleLogout} />
+    </div>
   );
 };
 
