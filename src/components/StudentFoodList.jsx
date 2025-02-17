@@ -78,49 +78,54 @@ const StudentFoodList = () => {
       <h2>Choose Your Meals for the Month</h2>
 
       {storedFoodData.length > 0 ? (
-        storedFoodData.map((meal, index) => (
-          <div key={meal.date} className="meal-day">
-            <h3>Date: {meal.date}</h3>
-            <div className="meal-item">
-              <p>Breakfast: {meal.breakfast}</p>
-              <button
-                className={`meal-choice ${choices[index]?.breakfast === 'yes' ? 'selected' : ''}`}
-                onClick={() => handleChoiceChange(index, 'breakfast', 'yes')}
-                disabled={isDatePassed(meal.date)}  // Disable if the date has passed
-              >
-                Yes
-              </button>
-              <button
-                className={`meal-choice ${choices[index]?.breakfast === 'no' ? 'selected' : ''}`}
-                onClick={() => handleChoiceChange(index, 'breakfast', 'no')}
-                disabled={isDatePassed(meal.date)}  // Disable if the date has passed
-              >
-                No
-              </button>
-            </div>
+  storedFoodData.map((meal, index) => (
+    <div key={meal.date} className="meal-day">
+      <h3>{meal.date}</h3>
+      <div className="meal-row">
+        <div className="meal-item">
+          <h3>Breakfast:</h3>
+          <h4>{meal.breakfast}</h4>
+          <button
+            className={`meal-choice ${choices[index]?.breakfast === 'yes' ? 'selected' : ''}`}
+            onClick={() => handleChoiceChange(index, 'breakfast', 'yes')}
+            disabled={isDatePassed(meal.date)}  // Disable if the date has passed
+          >
+            Yes
+          </button>
+          <button
+            className={`meal-choice ${choices[index]?.breakfast === 'no' ? 'selected' : ''}`}
+            onClick={() => handleChoiceChange(index, 'breakfast', 'no')}
+            disabled={isDatePassed(meal.date)}  // Disable if the date has passed
+          >
+            No
+          </button>
+        </div>
 
-            <div className="meal-item">
-              <p>Dinner: {meal.dinner}</p>
-              <button
-                className={`meal-choice ${choices[index]?.dinner === 'yes' ? 'selected' : ''}`}
-                onClick={() => handleChoiceChange(index, 'dinner', 'yes')}
-                disabled={isDatePassed(meal.date)}  // Disable if the date has passed
-              >
-                Yes
-              </button>
-              <button
-                className={`meal-choice ${choices[index]?.dinner === 'no' ? 'selected' : ''}`}
-                onClick={() => handleChoiceChange(index, 'dinner', 'no')}
-                disabled={isDatePassed(meal.date)}  // Disable if the date has passed
-              >
-                No
-              </button>
-            </div>
-          </div>
-        ))
-      ) : (
-        <p>No food data found for this month.</p>
-      )}
+        <div className="meal-item">
+          <h3>Dinner: </h3>
+          <h4>{meal.dinner}</h4>
+          <button
+            className={`meal-choice ${choices[index]?.dinner === 'yes' ? 'selected' : ''}`}
+            onClick={() => handleChoiceChange(index, 'dinner', 'yes')}
+            disabled={isDatePassed(meal.date)}  // Disable if the date has passed
+          >
+            Yes
+          </button>
+          <button
+            className={`meal-choice ${choices[index]?.dinner === 'no' ? 'selected' : ''}`}
+            onClick={() => handleChoiceChange(index, 'dinner', 'no')}
+            disabled={isDatePassed(meal.date)}  // Disable if the date has passed
+          >
+            No
+          </button>
+        </div>
+      </div>
+    </div>
+  ))
+) : (
+  <p>No food data found for this month.</p>
+)}
+
 
       <button className="save-button" onClick={handleSave}>
         Save Choices

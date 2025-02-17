@@ -13,9 +13,9 @@ const AStudentPermission = () => {
 
   // Save data to localStorage whenever students state changes
   useEffect(() => {
-    // Automatically delete oldest permissions if count exceeds 100
+    // Automatically delete oldest permissions if count exceeds 3
     if (students.length > 3) {
-      const trimmedStudents = students.slice(-3); // Keep only the last 100 permissions
+      const trimmedStudents = students.slice(-3); // Keep only the last 3 permissions
       setStudents(trimmedStudents); // Update the state
       localStorage.setItem('studentPermissions', JSON.stringify(trimmedStudents)); // Save trimmed data
     } else {

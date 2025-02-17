@@ -1,0 +1,102 @@
+/* Container for the entire student register form */
+.student-register-container {
+  max-width: 600px;
+  margin: 40px auto; /* Adds some space at the top */
+  padding: 30px;
+  background-color: #f0f0f0; /* Light background for better contrast */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.student-register-container:hover {
+  transform: translateY(-5px); /* Slight lift on hover for interactive feel */
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem; /* Larger heading size */
+  margin-bottom: 20px;
+  font-weight: 600; /* Slightly bolder */
+}
+
+/* Styling the form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased gap for better spacing */
+}
+
+/* Form group for input fields */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Adds spacing between label and input */
+}
+
+label {
+  font-size: 15px;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 8px; /* Added margin for better spacing */
+}
+
+/* Styling the input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd; /* Lighter border */
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease; /* Smooth border color change */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #3498db; /* Soft blue on focus */
+  outline: none;
+}
+
+/* Styling the submit button */
+.submit-btn {
+  background-color: #3498db; /* Using a vibrant blue color */
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .student-register-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 15px; /* Adjust input font size for small screens */
+  }
+
+  .submit-btn {
+    font-size: 16px; /* Adjust button font size for mobile */
+  }
+}

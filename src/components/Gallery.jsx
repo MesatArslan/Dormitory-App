@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/Gallery.css';
-import image from '../assets/image.png'; // Import the image once and reuse it
+import image from '../assets/Ankara3.jpg'; // Import the image once and reuse it
 
 const Gallery = () => {
   return (

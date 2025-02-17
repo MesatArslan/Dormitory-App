@@ -1,128 +1,188 @@
+/* Container for the entire food list form */
 .food-list-container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 30px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    text-align: center;
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .meal-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"], input[type="date"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  input[type="text"]:focus, input[type="date"]:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
-  .food-list-table {
-    margin-top: 30px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  table th, table td {
-    padding: 12px;
-    border: 1px solid #ccc;
-    text-align: center;
-  }
-  
-  table th {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  table td {
-    font-size: 16px;
-  }
-  
-  button.edit-btn {
-    padding: 6px 12px;
-    background-color: #ffc107;
-    border: none;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button.edit-btn:hover {
-    background-color: #e0a800;
-  }
-  
-  @media (max-width: 768px) {
-    .meal-form {
-      width: 100%;
-    }
-  
-    table {
-      font-size: 14px;
-    }
-  }
-  /* Style for the Clear Food List Button */
-.btn-clear {
-  background-color: #ff4d4d; /* Red color to signify delete action */
-  color: white;
-  border: none;
-  padding: 10px 20px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+  background-color: #f0f0f0; /* Lighter gray background */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Slightly more pronounced shadow for depth */
+  transition: transform 0.3s ease-in-out;
+}
+
+.food-list-container:hover {
+  transform: translateY(-5px); /* Slight lift effect for interactivity */
+}
+
+/* Header Styling */
+h2 {
+  text-align: center;
+  font-size: 2.2rem;  /* Larger font size */
+  color: #2c3e50; /* Darker shade for header text */
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+h3 {
+  text-align: center;
+  font-size: 26px;
+  color: #34495e; /* Darker grayish-blue for subheading */
+  margin-bottom: 10px;
+}
+
+/* Styling the meal form */
+.meal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased gap for better spacing */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Form group for input fields */
+.form-group-a {
+  display: flex;
+  flex-direction: row;
+  gap: 8px; /* Adds spacing between label and input */
+}
+
+/* Labels Styling */
+.label {
   font-size: 16px;
+  color: #2c3e50; /* Darker label text */
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Adds spacing between label and input */
+}
+
+label {
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Input Fields Styling */
+input[type="text"], input[type="date"] {
+  padding: 12px;
+  border: 1px solid #aaa; /* Light gray border */
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+  border-color: #2ca3e2; /* Vibrant blue when focused */
+  outline: none;
+}
+
+/* Styling the Submit Button */
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #1e77ff; /* Bright blue button */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #003ec5 !important; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight scale effect for hover */
+}
+
+button:focus {
+  outline: none;
+}
+
+.forward-backward {
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+.save-btn {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.cancel-btn {
+  margin-top: 5px;
+  margin-right: 0;
+}
+
+/* Styling the food list table */
+.food-list-table {
+  margin-top: 30px;
+  overflow-x: auto; /* Allow horizontal scrolling for wide tables */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 16px;
+}
+
+table th {
+  background-color: #3498db; /* Vibrant blue background */
+  color: #fff;
+  font-weight: 600;
+}
+
+table td {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Edit Button Styling */
+button.edit-btn {
+  padding: 8px 16px;
+  background-color: #f39c12; /* Vivid yellow edit button */
+  border: none;
+  color: white;
   border-radius: 5px;
-  margin-top: 20px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
+button.edit-btn:hover {
+  background-color: #e67e22; /* Darker yellow on hover */
+}
+
+/* Clear Button Styling */
+.btn-clear {
+  background-color: #e74c3c; /* Vibrant red for delete action */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 .btn-clear:hover {
-  background-color: #ff1a1a; /* Darker red on hover */
+  background-color: #ff1900 !important; /* Darker red on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
 }
 
 .btn-clear:active {
@@ -130,7 +190,32 @@
 }
 
 .btn-clear:focus {
-  outline: none; /* Remove default outline */
+  outline: none;
 }
 
-  
+/* Save Button Styling */
+.btn-save {
+  background-color: #2ca3e2; /* Vibrant blue for save action */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 30px;
+  margin-right: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-save:hover {
+  background-color: #2034c8; /* Deep blue on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.btn-save:active {
+  background-color: #1f4aa7; /* Even deeper blue when clicked */
+}
+
+.btn-save:focus {
+  outline: none;
+}

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom'; // Import Navigate for redirection
+import { Navigate } from 'react-router-dom';
 import StudentFoodList from './StudentFoodList';
 import StudentPermission from './StudentPermission';
-import '../css/StudentDashbboard.css';  // Custom CSS for styling
+import '../css/StudentDashbboard.css';  // Updated CSS
 
 const StudentDashboard = () => {
   const isStudentLoggedIn = useSelector((state) => state.studentS.isStudentLoggedIn); // Get student login status from Redux
@@ -30,8 +30,18 @@ const StudentDashboard = () => {
     <div className="student-dashboard-container">
       {/* Left Sidebar */}
       <div className="student-sidebar">
-        <button onClick={() => setSelectedComponent('StudentFoodList')}>Student Food List</button>
-        <button onClick={() => setSelectedComponent('StudentPermission')}>Student Permissions</button>
+        <button 
+          className={selectedComponent === 'StudentFoodList' ? 'active' : ''} 
+          onClick={() => setSelectedComponent('StudentFoodList')}
+        >
+          Student Food List
+        </button>
+        <button 
+          className={selectedComponent === 'StudentPermission' ? 'active' : ''} 
+          onClick={() => setSelectedComponent('StudentPermission')}
+        >
+          Student Permissions
+        </button>
       </div>
 
       {/* Right Content Area */}

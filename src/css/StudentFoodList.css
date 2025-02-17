@@ -1,81 +1,138 @@
+/* Container for the student food list */
 .student-food-list-container {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+  background-color: #f9fafb; /* Subtle off-white background */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+  transition: transform 0.3s ease-in-out;
 }
 
+.student-food-list-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Header styling */
+h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #1f2937; /* Deep gray for a modern look */
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: 0.8px;
+}
+
+/* Meal day container */
 .meal-day {
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #ffffff;
+  background-color: #ffffff; /* Clean white background */
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Gentle shadow */
+  transition: transform 0.2s ease;
 }
 
-.meal-item {
+.meal-day:hover {
+  transform: translateY(-3px);
+}
+
+/* Subheading for meal day */
+.meal-day h3 {
+  font-size: 1.5rem;
+  color: #374151; /* Medium gray for date */
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Flex container for breakfast and dinner */
+.meal-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  gap: 20px;
 }
 
-.meal-item p {
-  margin: 0;
-  font-size: 16px;
-}
-
-.choice-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.meal-choice {
-  padding: 5px 10px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.2s ease;
-}
-
-.meal-choice.selected {
-  background-color: #28a745;
-}
-
-.meal-choice:hover {
-  background-color: #0056b3;
-}
-
-.save-button {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.save-button:hover {
-  background-color: #218838;
-}
-
-.date-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  margin: 0 5px;
-  border-radius: 4px;
-  cursor: pointer;
+/* Styling for individual meal items (breakfast and dinner) */
+.meal-item {
+  flex: 1;
+  background-color: #f1f5f9; /* Light gray background for contrast */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
   transition: background-color 0.3s ease;
 }
 
-.date-button:hover {
-  background-color: #0056b3;
+.meal-item:hover {
+  background-color: #e5e7eb; /* Slightly darker gray on hover */
 }
 
+.meal-item h3 {
+  font-size: 1.3rem;
+  color: #1f2937; /* Dark gray for meal title */
+  margin-bottom: 12px;
+}
+
+.meal-item h4 {
+  font-size: 1.1rem;
+  color: #4b5563;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* Meal choice buttons */
+.meal-choice {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #10b981; /* Soft green for a refreshing look */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 5px;
+}
+
+.meal-choice:hover {
+  background-color: #059669; /* Darker green on hover */
+  transform: scale(1.04);
+}
+
+.meal-choice.selected {
+  background-color: #3b82f6; /* Bright blue for selected choices */
+}
+
+.meal-choice:disabled {
+  background-color: #9ca3af; /* Muted gray for disabled choices */
+  cursor: not-allowed;
+}
+
+/* Save button */
+.save-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #3b82f6; /* Blue save button */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: #2563eb; /* Darker blue on hover */
+  transform: scale(1.05);
+}
+
+.save-button:active {
+  background-color: #1d4ed8; /* Even darker blue when clicked */
+}
+
+.save-button:focus {
+  outline: none;
+}

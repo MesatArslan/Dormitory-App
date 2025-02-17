@@ -1,0 +1,85 @@
+/* Container for the entire student food sign-in summary */
+.student-food-sign-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto;
+  background-color: #f7f7f7; /* White background for the container */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Soft, subtle shadow */
+  transition: transform 0.3s ease-in-out;
+}
+
+.student-food-sign-container:hover {
+  transform: translateY(-4px); /* Slight hover effect */
+}
+
+/* Header */
+h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #2c3e50; /* Darker shade for the header */
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Day summary section */
+.day-summary {
+  background-color: #f7f7f7; /* Slightly lighter gray background for each day block */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px; /* Slightly smaller rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.day-summary h4 {
+  font-size: 1.8rem;
+  color: #34495e;
+  font-weight: 600;
+}
+
+/* Meal summary area - using a cleaner grid layout */
+.meal-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.meal-summary div {
+  background-color: #ecf0f1; /* Light gray background for meal sections */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.meal-summary h5 {
+  font-size: 1.6rem;
+  color: #2980b9; /* Soft blue for meal titles */
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.meal-summary p {
+  font-size: 1.4rem;
+  color: #7f8c8d; /* Soft gray for student count */
+  font-weight: 500;
+}
+
+/* Styling when no food data is available */
+.no-food-data {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #e74c3c; /* Red for "No data" message */
+  font-weight: 500;
+  margin-top: 25px;
+}
+
+/* Add a horizontal line between sections */
+.day-summary + .day-summary {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}

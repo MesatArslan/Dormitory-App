@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../css/StudentFoodSign.css'; // Make sure to create this CSS for styling
+import '../css/AStudentFoodSign.css'; // Make sure to create this CSS for styling
 
 const AStudentFoodSign = () => {
   // State to store food list (e.g., dates and menu items) and students' choices from localStorage
@@ -42,11 +42,13 @@ const AStudentFoodSign = () => {
               <h4>{meal.date}</h4>
               <div className="meal-summary">
                 <div>
-                  <h5>Breakfast: {meal.breakfast}</h5>
+                  <h4>Breakfast:</h4>
+                  <h5>{meal.breakfast}</h5>
                   <p>{countMealSignups(index, 'breakfast')} students signed up</p>
                 </div>
                 <div>
-                  <h5>Dinner: {meal.dinner}</h5>
+                  <h4>Dinner:</h4>
+                  <h5>{meal.dinner}</h5>
                   <p>{countMealSignups(index, 'dinner')} students signed up</p>
                 </div>
               </div>

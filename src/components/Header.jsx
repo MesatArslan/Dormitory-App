@@ -46,7 +46,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar className="header" position="sticky">
+    <AppBar className="custom-header" position="sticky">
       <Toolbar>
         {/* Logo */}
         <Button
@@ -94,9 +94,10 @@ const Header = () => {
                 {studentName}
               </Typography >
               {/* Log out button */}
-              <Button variant="outlined" color="inherit" onClick={handleLogout}>
+              <Button className="log-out-btn" variant="outlined" color="inherit" onClick={handleLogout}>
                 Log out
               </Button>
+
             </Box>
           ) : (
             // Show Log in button if no one is logged in

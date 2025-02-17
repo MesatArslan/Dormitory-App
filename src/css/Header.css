@@ -1,111 +1,197 @@
-/* General Header Styles */
-.header {
-    background-color: #2c3e50; /* Dark gray-blue for a modern and clean look */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: background-color 0.3s ease;
+/* Header.css */
+
+/* Target only the header component by using a custom wrapper class (custom-header) */
+.custom-header {
+  background: linear-gradient(90deg, #0097e9, #043546) !important; /* Linear gradient from blue to yellow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.custom-header .toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo button styles */
+.custom-header .logo {
+  font-size: 1.4rem; /* Larger font size for emphasis */
+  font-weight: 600; /* Slightly heavier font weight for prominence */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffd700; /* Initially transparent for gradient effect */
+  -webkit-background-clip: text; /* Clip the background gradient to the text */
+  background-clip: text; /* Ensure background gradient only shows inside the text */
+  transition: transform 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+/* Hover effect */
+.custom-header .logo:hover {
+  transform: scale(1.1); /* Scale the logo on hover for emphasis */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.6); /* Subtle glowing effect */
+  color: #ffffff; /* Change the color to white for a contrast on hover */
+}
+
+/* Optional: Add a subtle underline effect on hover */
+.custom-header .logo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 0;
+  background-color: #ffd700; /* Golden underline on hover */
+  transition: width 0.3s ease;
+}
+
+.custom-header .logo:hover::after {
+  width: 100%; /* Full underline on hover */
+}
+
+/* Navigation links */
+.custom-header .nav-links {
+  display: flex;
+  gap: 30px;
+}
+/* Navigation link styles */
+.custom-header .nav-link {
+  color: #ffffff; /* White text for nav links */
+  font-size: 1rem; /* Smaller font size */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.6px; /* Slightly smaller letter-spacing */
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.custom-header .nav-link:hover {
+  color: #ffd700; /* Golden yellow on hover */
+  transform: translateY(-2px); /* Subtle upward movement on hover */
+}
+
+/* Smooth underline on hover */
+.custom-header .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Reduced distance for the underline */
+  height: 1.5px; /* Slightly thinner underline */
+  width: 100%;
+  background-color: #ffd700; /* Golden underline */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.custom-header .nav-link:hover::after {
+  transform: scaleX(1); /* Full underline on hover */
+}
+
+/* Auth section */
+.custom-header .auth-section {
+  display: flex;
+  align-items: center;
+}
+
+.custom-header .admin-name,
+.custom-header .student-name {
+  color: #ffd700; /* Golden yellow for names */
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-header .admin-name:hover,
+.custom-header .student-name:hover {
+  color: #ffffff; /* White color on hover */
+  transform: scale(1.05);
+}
+
+/* Log out button */
+.custom-header .MuiButton-outlined {
+  border-color: #1e90ff; /* Dodger blue border for the logout button */
+  color: #1e90ff; /* Dodger blue text */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  margin-left: 20px;
+}
+
+.custom-header .MuiButton-outlined:hover {
+  background-color: #4169e1 !important; /* Royal blue background on hover */
+  color: #ffffff; /* White text on hover */
+  border-color: #00bfff; /* Deep sky blue border on hover */
+}
+
+
+/* Log in button */
+.custom-header .join-us-btn {
+  background-color: #1e95d5; /* Solid blue background */
+  color: #ffffff; /* White text for contrast */
+  font-weight: bold;
+  font-size: 1rem; /* Slightly smaller font size */
+  padding: 8px 20px; /* Smaller padding for a more compact button */
+  border: none;
+  border-radius: 25px; /* Slightly smaller rounded corners */
+  text-transform: uppercase; /* Uppercase text for uniformity */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow for a softer look */
+}
+
+/* Hover effect */
+.custom-header .join-us-btn:hover {
+  background-color: #ffd700; /* Darker blue background on hover */
+  transform: scale(1.03); /* Slight scaling effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Subtle stronger shadow on hover */
+}
+
+/* Focused state (optional but good for accessibility) */
+.custom-header .join-us-btn:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 8px rgba(0, 150, 255, 0.8); /* Blue glowing focus effect */
+}
+
+
+/* Log out button */
+.custom-header .log-out-btn {
+  background-color: transparent; /* No background color */
+  color: #ffffff; /* White text */
+  border: 2px solid #ffffff; /* White border */
+  font-weight: bold;
+  font-size: 0.9rem; /* Slightly smaller font size */
+  padding: 6px 15px; /* Reduced padding for a more compact button */
+  border-radius: 25px; /* Smaller rounded corners */
+  text-transform: uppercase; /* Uniform text style */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transitions for background, border, and transform */
+}
+
+/* Hover effect */
+.custom-header .log-out-btn:hover {
+  background-color: #ffd700; /* Golden yellow background on hover */
+  color: #0d1b2a; /* Dark blue text on hover */
+  border-color: #ffd700; /* Golden yellow border on hover */
+  transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Focused state (for accessibility) */
+.custom-header .log-out-btn:focus {
+  outline: none; /* Remove the default focus outline */
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.8); /* Golden glowing focus effect */
+}
+
+
+
+/* Responsive header */
+@media (max-width: 768px) {
+  .custom-header .nav-links {
+    display: none; /* Hide nav links on smaller screens */
   }
-  
-  /* Logo Styles */
-  .header .logo {
-    flex-grow: 1;
-    font-weight: 600;
-    font-size: 1.6rem;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Arial', sans-serif;
+
+  .custom-header .auth-section {
+    margin-left: auto;
   }
-  
-  /* Desktop Navigation Links */
-  .header .nav-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .header .nav-link {
-    color: white;
-    text-decoration: none;
-    font-weight: 400;
-    transition: color 0.3s ease;
-  }
-  
-  .header .nav-link:hover {
-    color: #ecf0f1; /* Lighter grayish color on hover for a clean, minimal effect */
-  }
-  
-  /* Join Us Button Styles */
-  .header .join-us-btn {
-    background-color: #3498db; /* Light blue for a clean and professional look */
-    color: white;
-    font-weight: 500;
-    padding: 0.6rem 1.4rem;
-    border-radius: 30px;
-    text-transform: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .header .join-us-btn:hover {
-    background-color: #2980b9; /* Slightly darker blue on hover */
-  }
-  
-  /* Mobile Menu Styles */
-  .mobile-menu {
-    display: none;
-  }
-  
-  @media (max-width: 768px) {
-    /* Hide desktop links on mobile */
-    .header .nav-links {
-      display: none;
-    }
-  
-    /* Display mobile menu icon */
-    .mobile-menu {
-      display: block;
-    }
-  
-    /* Mobile Drawer Styles */
-    .mobile-drawer {
-      position: fixed; /* Keeps the drawer fixed under the header */
-      top: 64px; /* Adjust based on your header height */
-      width: 100%;
-      z-index: 999; /* Make sure it is above other content */
-      background-color: #34495e; /* Slightly darker gray-blue */
-      transition: transform 0.3s ease-out;
-    }
-  
-    .drawer-box {
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      color: #ffffff;
-    }
-  
-    /* Drawer List Item Styles */
-    .drawer-box .MuiListItemText-root {
-      font-size: 16px;
-      font-weight: 400;
-      color: white;
-      padding: 0.8rem;
-      width: 100%;
-      text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      transition: background-color 0.3s ease;
-    }
-  
-    .drawer-box .MuiListItemText-root:hover {
-      background-color: #2980b9; /* Light blue hover effect */
-    }
-  
-    /* Apply shadow to Drawer */
-    .MuiDrawer-paper {
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      border-radius: 0;
-    }
-  }
-  
+}

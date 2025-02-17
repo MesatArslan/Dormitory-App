@@ -1,36 +1,72 @@
 .student-dashboard-container {
-    display: flex;
-    height: 100vh;
-    background-color: #f4f4f4;
-  }
-  
-  .student-sidebar {
-    width: 20%;
-    background-color: #2c3e50;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-  
-  .student-sidebar button {
-    padding: 10px;
-    margin-bottom: 10px;
-    color: white;
-    background-color: #34495e;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    border-radius: 5px;
-  }
-  
-  .student-sidebar button:hover {
-    background-color: #1abc9c;
-  }
-  
-  .student-content {
-    width: 80%;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
+  display: flex;
+  height: 100vh;
+  background-color: #f4f8fb; /* Light background for the entire layout */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Sidebar Styling */
+.student-sidebar {
+  width: 20%;
+  background-color: #043546; /* Same dark blue-grey for sidebar */
+  display: flex;
+  flex-direction: column;
+  padding: 30px 18px;
+  align-items: flex-start;
+  gap: 15px;
+  color: #fff;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1); /* Sidebar shadow for depth */
+}
+
+.student-sidebar h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+/* Sidebar Button Styling */
+.student-sidebar button {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #036b8c; /* Default muted color */
+  border: none;
+  border-radius: 8px;
+  color: #ecf0f1;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.student-sidebar button:hover {
+  background-color: #0097e9; /* Green hover state */
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Active button styling */
+.student-sidebar button.active {
+  background-color: #007bb5 !important; /* Green for active button */
+  color: white; /* White text for contrast */
+  transform: scale(1.02); /* Slight scaling */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Shadow effect for focus */
+  font-weight: bold;
+}
+
+/* Main Content Area */
+.student-content {
+  width: 80%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  overflow-y: auto; /* Scrollable content if needed */
+  transition: all 0.3s ease;
+}
+
+/* Sidebar Button Icons */
+.student-sidebar button span {
+  margin-right: 10px;
+}
+
+

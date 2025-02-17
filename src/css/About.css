@@ -1,87 +1,95 @@
 /* General Styles for About Component */
 .about-container {
-    margin: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Style for Tab Buttons */
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for Tab Buttons */
+.tab-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.tab-buttons button {
+  padding: 12px 24px;
+  background-color: rgba(0, 123, 255, 0.05); /* Light blue background */
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #007bff; /* Blue text color */
+  font-weight: 500;
+}
+
+.tab-buttons button:hover {
+  background-color: #007bff; /* Dark blue background on hover */
+  color: white; /* White text on hover */
+  border-color: #05172a; /* Darker blue border when active */
+}
+
+.tab-buttons button.active {
+  background-color: #007bff; /* Solid blue background when active */
+  color: white; /* White text when active */
+  border-color: #0056b3; /* Darker blue border when active */
+}
+
+/* Style for Tab Content */
+.tab-content {
+  background-color: #f9f9f9; /* Light background color for content */
+  padding: 30px;
+  margin-left: 80px;
+  margin-right: 80px;
+  border-radius: 10px;
+  border: 1px solid #ddd; /* Light border for content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.tab-content h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333; /* Dark text for headings */
+  font-weight: 600;
+}
+
+.tab-content p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.tab-content ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.tab-content ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.tab-content .tab-content__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Optional: Add styles for responsive behavior */
+@media (max-width: 768px) {
   .tab-buttons {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
-  }
-  
-  .tab-buttons button {
-    padding: 10px 20px;
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    color: rgb(23, 17, 17);
-  }
-  
-  .tab-buttons button:hover {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .tab-buttons button.active {
-    background-color: #007bff;
-    color: white;
-    border-color: #0056b3;
-  }
-  
-  /* Style for Tab Content */
-  .tab-content {
-    background-color: #f9f9f9;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-left: 80px;
-    margin-right: 80px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-  } 
-  
-  
-  .tab-content h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .tab-content p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  .tab-content ul {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-  
-  .tab-content ul li {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .tab-content .tab-content__inner {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  /* Optional: Add styles for responsive behavior */
-  @media (max-width: 768px) {
-    .tab-buttons {
       flex-direction: column;
       align-items: stretch;
-    }
-  
-    .tab-buttons button {
+  }
+
+  .tab-buttons button {
       width: 100%;
       margin-bottom: 10px;
-    }
   }
-  
+
+  .tab-content {
+      margin-left: 20px;
+      margin-right: 20px;
+      padding: 20px;
+  }
+}

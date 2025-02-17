@@ -33,14 +33,21 @@ const AFoodList = () => {
     };
 
     setFoodData((prevData) => {
-      const index = prevData.findIndex(item => item.date === selectedDate);
-      if (index === -1) {
-        return [...prevData, newData];  // Add new meal entry
-      } else {
-        const updatedData = [...prevData];
-        updatedData[index] = newData;   // Update existing entry
-        return updatedData;
+      let updatedData = [...prevData];
+
+      // If food list exceeds 45 items, remove the first entry
+      if (updatedData.length >= 45) {
+        updatedData.shift();  // Remove the first item
       }
+
+      // Check if the selected date already exists in the list
+      const index = updatedData.findIndex(item => item.date === selectedDate);
+      if (index === -1) {
+        updatedData.push(newData);  // Add new meal entry
+      } else {
+        updatedData[index] = newData;  // Update existing entry
+      }
+      return updatedData;
     });
 
     // Clear input fields after adding
@@ -117,14 +124,16 @@ const AFoodList = () => {
       {/* Form to Add/Update Meal Data */}
       <div className="meal-form">
         <div className="form-group">
-          <label>Date</label>
-          <button onClick={() => handleDateChange(-1)}>{'<'}</button>  {/* Backward button */}
-          <input
-            type="date"
-            value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)}
-          />
-          <button onClick={() => handleDateChange(1)}>{'>'}</button>  {/* Forward button */}
+          <label className='label'>Date</label>
+          <div className='form-group-a'>
+            <button className='forward-backward' onClick={() => handleDateChange(-1)}>{'<'}</button>  {/* Backward button */}
+            <input
+              type="date"
+              value={selectedDate}
+              onChange={(e) => setSelectedDate(e.target.value)}
+            />
+            <button className='forward-backward' onClick={() => handleDateChange(1)}>{'>'}</button>  {/* Forward button */}
+          </div>
         </div>
 
         <div className="form-group">
@@ -154,7 +163,7 @@ const AFoodList = () => {
 
       {/* Table for Meals */}
       <div className="food-list-table">
-        <h3>Meals for the Selected Date</h3>
+        <h3>Meals List</h3>
         <table>
           <thead>
             <tr>
@@ -188,8 +197,8 @@ const AFoodList = () => {
                         />
                       </td>
                       <td>
-                        <button onClick={() => handleSaveEdit(index)}>Save</button>
-                        <button onClick={handleCancelEdit}>Cancel</button>
+                        <button className='save-btn' onClick={() => handleSaveEdit(index)}>Save</button>
+                        <button className='cancel-btn' onClick={handleCancelEdit}>Cancel</button>
                       </td>
                     </>
                   ) : (

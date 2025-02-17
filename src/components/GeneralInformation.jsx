@@ -1,6 +1,5 @@
 import React from 'react';
 import { Person, LocationOn, Phone, WhatsApp, Print, Email } from '@mui/icons-material';
-import { Button } from '@mui/material';
 import '../css/GeneralInformation.css'
 
 const GeneralInformation = () => {
@@ -39,7 +38,7 @@ const GeneralInformation = () => {
               </div>
               <div className="sidebar__comments-text-box">
                 <h5>Yurt Müdürü</h5>
-                <p>Ülkü Öner</p>
+                <p>Yurt Müdürü</p>
               </div>
             </li>
             <li>
@@ -48,7 +47,7 @@ const GeneralInformation = () => {
               </div>
               <div className="sidebar__comments-text-box">
                 <h5>Adres</h5>
-                <p>Bahçelievler 66. Sk. (Eski 18. Sk.) No:14 Bahçelievler Çankaya / ANKARA</p>
+                <p> Çankaya / ANKARA</p>
               </div>
             </li>
             <li>
@@ -57,7 +56,7 @@ const GeneralInformation = () => {
               </div>
               <div className="sidebar__comments-text-box">
                 <h5>Telefon</h5>
-                <a href="tel: 0312 212 62 72"><p>0312 212 62 72</p></a>
+                <a href="tel: 0312 212 62 72"><p>0555 444 33 222</p></a>
               </div>
             </li>
             <li>
@@ -66,7 +65,7 @@ const GeneralInformation = () => {
               </div>
               <div className="sidebar__comments-text-box">
                 <h5>WhatsApp</h5>
-                <a href="https://api.whatsapp.com/send?phone=905326143871"><p>05326143871</p></a>
+                <a href="https://api.whatsapp.com/send?phone=905326143871"><p>0555 444 33 222</p></a>
               </div>
             </li>
             <li>
@@ -75,7 +74,7 @@ const GeneralInformation = () => {
               </div>
               <div className="sidebar__comments-text-box">
                 <h5>Faks</h5>
-                <p>0312 213 41 40</p>
+                <p>0555 444 33 222</p>
               </div>
             </li>
             <li>
@@ -84,7 +83,7 @@ const GeneralInformation = () => {
               </div>
               <div className="sidebar__comments-text-box">
                 <h5>E-Mail</h5>
-                <a href="mailto:info@erkekogrenciyurdu.com"><p>info@erkekogrenciyurdu.com</p></a>
+                <a href="mailto:info@erkekogrenciyurdu.com"><p>info@yurtuygulaması.com</p></a>
               </div>
             </li>
           </ul>

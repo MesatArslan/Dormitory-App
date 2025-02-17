@@ -1,38 +1,85 @@
+/* General Admin Dashboard Layout */
 .admin-dashboard-container {
-    display: flex;
-    height: 100vh;
-    margin-top: 20px;
-  }
-  
-  /* Left Sidebar */
-  .admin-sidebar {
-    width: 20%;
-    background-color: #f5f5f5;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .admin-sidebar button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .admin-sidebar button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Right Content Area */
-  .admin-content {
-    width: 80%;
-    padding: 20px;
-  }
-  
+  display: flex;
+  height: 100vh;
+  background-color: #f4f8fb; /* Slightly lighter background */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Sidebar Styling */
+.admin-sidebar {
+  width: 20%;
+  background-color: #043546; /* Dark blue-green from the gradient */
+  display: flex;
+  flex-direction: column;
+  padding: 30px 18px;
+  align-items: flex-start;
+  gap: 15px;
+  color: #fff;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1); /* Sidebar shadow for depth */
+}
+
+.admin-sidebar h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+/* Sidebar Button Styling */
+.admin-sidebar button {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #036b8c; /* Muted blue from gradient's mid-tone */
+  border: none;
+  border-radius: 8px;
+  color: #ecf0f1;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.admin-sidebar button:hover {
+  background-color: #0097e9; /* Hover color from gradient's lighter blue */
+  transform: scale(1.05);
+}
+
+/* Active button styling */
+.admin-sidebar button.active {
+  background-color: #007bb5 !important; /* Brighter blue for active button */
+  color: white;
+  transform: scale(1.02); /* Slight scaling */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  font-weight: bold;
+}
+
+/* Main Content Area */
+.admin-content {
+  width: 80%;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  margin: 1px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+/* Sidebar Button Icons */
+.admin-sidebar button span {
+  margin-right: 10px;
+}
+
+/* Header and Content Padding for cleaner look */
+.admin-content h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.admin-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
