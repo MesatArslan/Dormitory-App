@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://MesatArslan.github.io/Dormitory-App",
+  "homepage": "https://MesatArslan.github.io/Dormitory-App/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
