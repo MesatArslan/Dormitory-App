@@ -48,7 +48,7 @@ input[type="email"],
 input[type="password"] {
   padding: 12px;
   font-size: 16px;
-  border: 1px solid #ddd; /* Lighter border */
+  border: 1px solid #aaa; /* Lighter border */
   border-radius: 6px;
   width: 100%;
   box-sizing: border-box;
@@ -80,7 +80,7 @@ input[type="password"]:focus {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .student-register-container {
     padding: 20px;
     margin: 20px;

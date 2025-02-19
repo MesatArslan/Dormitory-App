@@ -25,7 +25,7 @@ h2 {
 
 /* Day summary section */
 .day-summary {
-  background-color: #f7f7f7; /* Slightly lighter gray background for each day block */
+  background-color: #e4e4e4; /* Slightly lighter gray background for each day block */
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px; /* Slightly smaller rounded corners */
@@ -44,8 +44,9 @@ h2 {
 /* Meal summary area - using a cleaner grid layout */
 .meal-summary {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
   gap: 20px;
+  align-items: stretch; /* Ensure grid items align vertically */
 }
 
 .meal-summary div {
@@ -54,6 +55,8 @@ h2 {
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box; /* Include padding and border in width calculations */
+  overflow: hidden; /* Prevent content overflow */
 }
 
 .meal-summary h5 {
@@ -82,4 +85,36 @@ h2 {
 .day-summary + .day-summary {
   border-top: 1px solid #ddd;
   padding-top: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .student-food-sign-container {
+    padding: 15px; /* Reduced padding for smaller screens */
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 1.8rem; /* Smaller font size for smaller screens */
+  }
+
+  .day-summary h4 {
+    font-size: 1.4rem; /* Smaller font size for smaller screens */
+  }
+
+  .meal-summary {
+    grid-template-columns: 1fr; /* Stack meal summaries in one column for mobile */
+  }
+
+  .meal-summary h5 {
+    font-size: 1.2rem; /* Smaller font size for smaller screens */
+  }
+
+  .meal-summary p {
+    font-size: 1rem; /* Smaller font size for smaller screens */
+  }
+
+  .no-food-data {
+    font-size: 1rem; /* Smaller font size for smaller screens */
+  }
 }

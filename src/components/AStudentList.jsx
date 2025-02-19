@@ -156,7 +156,7 @@ const AStudentList = () => {
                     </div>
                   )}
                 </td>
-                <td>
+                <td className='td-buttons'>
                   {editingIndex === index ? (
                     <div>
                       <button className="save-btn" onClick={handleSave}>

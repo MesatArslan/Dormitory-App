@@ -135,3 +135,59 @@ button.delete-btn:hover {
   right: 10px;
   cursor: pointer;
 }
+
+
+@media (max-width: 768px) {
+
+  .student-list-table {
+    display: block;
+    overflow-x: auto; /* Enable horizontal scrolling for small screens */
+    white-space: nowrap; /* Prevent wrapping of table content */
+  }
+
+  .td-buttons {
+    display: flex; /* Flexbox ile yatay sıralama */
+  }
+
+
+  button.edit-btn {
+    background-color: #22c55e; /* Green for Edit */
+    color: white;
+    margin-right: 10px;
+    margin-top: 1px;
+  }
+
+  button.edit-btn:hover {
+    background-color: #007c2d !important; /* Green for Edit */
+    color: white;
+    margin-right: 10px;
+  }
+
+  button.delete-btn {
+    background-color: #ef4444; /* Red for Delete */
+    color: white;
+    margin-top: 1px;
+  }
+
+  button.delete-btn:hover {
+    background-color: #a70000 !important; /* Red for Delete */
+    color: white;
+  }
+
+  .save-btn {
+    background-color: #22c55e;
+    width: 60px;
+  }
+  .save-btn:hover {
+    background-color: #51ba57 !important;
+  }
+  
+  .cancel-btn {
+    background-color: #007BFF;
+    width: 80px;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #0056b3 !important;
+  }
+}

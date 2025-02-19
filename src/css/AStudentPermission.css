@@ -82,3 +82,61 @@ h2 {
   background-color: #c0392b !important; /* Darker red on hover */
   transform: scale(1.05); /* Slight scale effect */
 }
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .student-permission-container {
+    width: 100% !important;
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  h2 {
+    font-size: 1.7rem; /* Smaller font size for mobile */
+    margin-bottom: 15px;
+  }
+
+  .permission-table {
+    display: block;
+    overflow-x: auto; /* Enable horizontal scrolling for small screens */
+    white-space: nowrap; /* Prevent wrapping of table content */
+  }
+
+  .permission-table th,
+  .permission-table td {
+    padding: 8px; /* Reduce padding for smaller screens */
+    font-size: 19px; /* Smaller font size for table cells */
+  }
+
+  .approve-btn,
+  .reject-btn {
+    padding: 6px 12px; /* Smaller buttons for mobile */
+    font-size: 14px;
+  }
+
+  /* Stack buttons vertically on small screens */
+  .approve-btn,
+  .reject-btn {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.7rem; /* Even smaller font size for very small screens */
+  }
+
+  .permission-table th,
+  .permission-table td {
+    padding: 6px; /* Further reduce padding */
+    font-size: 15px; /* Smaller font size for very small screens */
+  }
+
+  .approve-btn,
+  .reject-btn {
+    padding: 4px 8px; /* Even smaller buttons */
+    font-size: 12px;
+  }
+}

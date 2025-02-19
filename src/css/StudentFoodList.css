@@ -3,25 +3,25 @@
   width: 90%;
   max-width: 1000px;
   margin: 30px auto;
-  background-color: #f9fafb; /* Subtle off-white background */
+  background-color: #f3f4f6; /* Very light gray for a clean background */
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for depth */
   transition: transform 0.3s ease-in-out;
 }
 
 .student-food-list-container:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px); /* Subtle hover effect */
 }
 
 /* Header styling */
 h2 {
   text-align: center;
-  font-size: 2.4rem;
-  color: #1f2937; /* Deep gray for a modern look */
-  font-weight: 700;
+  font-size: 2.5rem;
+  color: #111827; /* Dark gray for the header */
+  font-weight: bold;
   margin-bottom: 25px;
-  letter-spacing: 0.8px;
+  letter-spacing: 1px;
 }
 
 /* Meal day container */
@@ -30,18 +30,19 @@ h2 {
   padding: 25px;
   border-radius: 12px;
   margin-bottom: 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Gentle shadow */
+  border-left: 6px solid #3b82f6; /* Bright blue accent for meal days */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft shadow */
   transition: transform 0.2s ease;
 }
 
 .meal-day:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px); /* Lift effect on hover */
 }
 
 /* Subheading for meal day */
 .meal-day h3 {
-  font-size: 1.5rem;
-  color: #374151; /* Medium gray for date */
+  font-size: 1.6rem;
+  color: #374151; /* Medium gray for date text */
   margin-bottom: 15px;
   font-weight: 600;
 }
@@ -50,14 +51,13 @@ h2 {
 .meal-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 /* Styling for individual meal items (breakfast and dinner) */
 .meal-item {
   flex: 1;
-  background-color: #f1f5f9; /* Light gray background for contrast */
+  background-color: #f0f9ff; /* Soft blue background for meal items */
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -65,18 +65,18 @@ h2 {
 }
 
 .meal-item:hover {
-  background-color: #e5e7eb; /* Slightly darker gray on hover */
+  background-color: #e0f2fe; /* Slightly darker blue on hover */
 }
 
 .meal-item h3 {
   font-size: 1.3rem;
-  color: #1f2937; /* Dark gray for meal title */
+  color: #1f2937; /* Dark gray for meal titles */
   margin-bottom: 12px;
 }
 
 .meal-item h4 {
   font-size: 1.1rem;
-  color: #4b5563;
+  color: #4b5563; /* Medium gray for meal details */
   font-weight: 500;
   margin-bottom: 12px;
 }
@@ -87,7 +87,7 @@ h2 {
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: #10b981; /* Soft green for a refreshing look */
+  background-color: #006aff; /* Vivid green for the buttons */
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -96,16 +96,16 @@ h2 {
 }
 
 .meal-choice:hover {
-  background-color: #059669; /* Darker green on hover */
+  background-color: #02f52b !important; /* Darker green on hover */
   transform: scale(1.04);
 }
 
 .meal-choice.selected {
-  background-color: #3b82f6; /* Bright blue for selected choices */
+  background-color: #24d700; /* Bright blue for selected choices */
 }
 
 .meal-choice:disabled {
-  background-color: #9ca3af; /* Muted gray for disabled choices */
+  background-color: #d1d5db; /* Muted gray for disabled choices */
   cursor: not-allowed;
 }
 
@@ -114,9 +114,9 @@ h2 {
   width: 100%;
   padding: 14px;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: bold;
   color: #ffffff;
-  background-color: #3b82f6; /* Blue save button */
+  background-color: #3b82f6; /* Bright blue save button */
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -130,9 +130,82 @@ h2 {
 }
 
 .save-button:active {
-  background-color: #1d4ed8; /* Even darker blue when clicked */
+  background-color: #1d4ed8; /* Even deeper blue when clicked */
 }
 
 .save-button:focus {
   outline: none;
 }
+
+
+/* Container for the student food list */
+.student-food-list-container {
+  width: 95%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+
+@media (max-width: 480px) {
+  .student-food-list-container {
+    width: 100%;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px auto;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+
+  .meal-day {
+    padding: 15px;
+    border-left-width: 3px;
+    margin-bottom: 20px;
+  }
+
+  .meal-day h3 {
+    font-size: 1.2rem;
+  }
+
+  .meal-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .meal-item {
+    width: 100%;
+    flex: none;
+    padding: 15px;
+  }
+
+  .meal-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .meal-item h4 {
+    font-size: 1rem;
+  }
+
+  .meal-choice {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+  }
+
+  .save-button {
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+
+}
+
+/* Existing styles remain below */
+/* ... (keep all your original styles here) */

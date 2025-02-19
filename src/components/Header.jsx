@@ -5,6 +5,7 @@ import { logout as studentLogout } from '../redux/studentSlice'; // Import the s
 import { logout as adminLogout } from '../redux/adminSlice'; // Import the admin logout action
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for programmatic navigation
 import '../css/Header.css';
+import Meaimage from '../assets/MEA.png'
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -48,7 +49,13 @@ const Header = () => {
   return (
     <AppBar className="custom-header" position="sticky">
       <Toolbar>
-        {/* Logo */}
+        {/* Logo image (no button) */}
+        <img className='logo-img'
+          src={Meaimage}// Replace with your actual logo path
+          onClick={() => navigate('/')} // Navigate to homepage when logo is clicked
+        />
+        
+        {/* Association Name (as a button to navigate) */}
         <Button
           className="logo"
           variant="text"

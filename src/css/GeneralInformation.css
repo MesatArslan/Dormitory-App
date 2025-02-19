@@ -24,7 +24,7 @@
 .sidebar__single {
   width: 420px;
   padding: 15px;
-  background-color: #f4f4f4;
+  background-color: #f2f2f2;
   border-radius: 8px;
 }
 
@@ -83,4 +83,52 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .general-info-main {
+    flex-direction: column; /* Stack the general info and sidebar vertically */
+    align-items: flex-start;
+  }
+
+  .general-info-container {
+    width: 100%; /* Make the container take full width on small screens */
+    padding-right: 0; /* Remove extra padding */
+  }
+
+  .general-info-container h2 {
+    font-size: 22px; /* Adjust header font size for smaller screens */
+  }
+
+  .general-info-container p {
+    font-size: 14px; /* Adjust paragraph font size for better readability */
+  }
+
+  .sidebar__single {
+    width: 100%; /* Sidebar takes full width on smaller screens */
+    margin-top: 20px; /* Add margin to separate the sidebar */
+    padding: 3px;
+  }
+
+  .sidebar__title {
+    font-size: 20px; /* Adjust font size for sidebar title */
+    padding-left: 15px; /* Less padding on small screens */
+  }
+
+  .sidebar__comments-icon {
+    font-size: 20px; /* Adjust icon size for smaller screens */
+  }
+
+  .sidebar__comments-text-box h5 {
+    font-size: 14px; /* Smaller header font size in comments section */
+  }
+
+  .sidebar__comments-text-box p {
+    font-size: 12px; /* Smaller paragraph font size in comments section */
+  }
+
+  button {
+    width: 100%; /* Make the button full width on smaller screens */
+    padding: 12px 20px; /* Adjust padding for better touch targets */
+  }
 }

@@ -16,7 +16,20 @@
   align-items: center;
 }
 
-/* Logo button styles */
+/* Logo styles */
+.custom-header .logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.custom-header .logo-img {
+  width: 50px ; /* Size of the logo image */
+  height: 50px;
+  margin-right: 10px; /* Space between the logo and text */
+  cursor: pointer;
+}
+
+/* Logo Text styles */
 .custom-header .logo {
   font-size: 1.4rem; /* Larger font size for emphasis */
   font-weight: 600; /* Slightly heavier font weight for prominence */
@@ -57,6 +70,7 @@
   display: flex;
   gap: 30px;
 }
+
 /* Navigation link styles */
 .custom-header .nav-link {
   color: #ffffff; /* White text for nav links */
@@ -125,7 +139,6 @@
   border-color: #00bfff; /* Deep sky blue border on hover */
 }
 
-
 /* Log in button */
 .custom-header .join-us-btn {
   background-color: #1e95d5; /* Solid blue background */
@@ -154,7 +167,6 @@
   box-shadow: 0 0 8px rgba(0, 150, 255, 0.8); /* Blue glowing focus effect */
 }
 
-
 /* Log out button */
 .custom-header .log-out-btn {
   background-color: transparent; /* No background color */
@@ -171,8 +183,8 @@
 
 /* Hover effect */
 .custom-header .log-out-btn:hover {
-  background-color: #ffd700; /* Golden yellow background on hover */
-  color: #0d1b2a; /* Dark blue text on hover */
+  background-color: transparent !important; /* Golden yellow background on hover */
+  color: #ffffff; /* Dark blue text on hover */
   border-color: #ffd700; /* Golden yellow border on hover */
   transform: scale(1.05); /* Slight scaling effect on hover */
 }
@@ -183,15 +195,65 @@
   box-shadow: 0 0 8px rgba(255, 215, 0, 0.8); /* Golden glowing focus effect */
 }
 
-
-
-/* Responsive header */
 @media (max-width: 768px) {
+  .custom-header {
+    padding: 10px 20px; /* Reduced padding on smaller screens */
+  }
+
+  .custom-header .toolbar {
+    flex-direction: column; /* Stack the toolbar items vertically */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .custom-header .logo-container {
+    justify-content: center;
+    width: 100%; /* Center logo container on mobile */
+    margin-bottom: 10px; /* Add some margin at the bottom */
+  }
+
+  .custom-header .logo {
+    font-size: 0.7rem;
+    width: 150px;
+    margin-left: -2px;
+  }
+  .custom-header .logo-img {
+    margin-left: -10px;
+  }
+
+  .custom-header .admin-name,
+  .custom-header .student-name {
+      font-size: 0.9rem; /* Adjust to a smaller size for mobile */
+      margin-right: 0px !important;
+      margin-bottom: 10px;
+      text-align: center;
+  }
+
   .custom-header .nav-links {
     display: none; /* Hide nav links on smaller screens */
   }
 
   .custom-header .auth-section {
     margin-left: auto;
+    margin-top: 10px; /* Add margin top for separation on small screens */
+  }
+
+  .custom-header .MuiButton-outlined {
+    font-size: 0.6rem; /* Smaller font size on mobile */
+    padding: 8px 16px; /* Smaller padding on mobile */
+    border-radius: 25px;
+    margin-bottom: 7px;
+  }
+
+  .custom-header .join-us-btn {
+    width: 100px; /* Full width for mobile login button */
+    margin-bottom: 10px;
+    margin-right: -8px;
+  }
+
+  .custom-header .log-out-btn {
+    width: 100%; /* Full width for mobile logout button */
+    padding: 10px 0; /* Taller button for better touch targets */
+    margin-bottom: 10px;
+    margin-right: -10px;
   }
 }

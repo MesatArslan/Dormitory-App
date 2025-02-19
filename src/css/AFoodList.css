@@ -219,3 +219,13 @@ button.edit-btn:hover {
 .btn-save:focus {
   outline: none;
 }
+
+
+
+@media (max-width: 768px) {
+
+  .food-list-container {
+    width: 95%;
+  }
+
+}
