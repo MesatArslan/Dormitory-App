@@ -11,7 +11,7 @@ import AdminDashboard from './components/AdminDashboard';
 
 const App = () => {
   return (
-    <Router>  {/* Wrap everything in BrowserRouter */}
+    <Router  basename="/Dormitory-App">  {/* Wrap everything in BrowserRouter */}
       <div>
         <Header />
         <Routes>  {/* Use Routes instead of Switch */}
